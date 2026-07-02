@@ -8,7 +8,7 @@
 </head>
 <body>
     <main class="flex justify-center items-center min-h-screen">
-        <form action="" class="card w-96 bg-base-200 shadow-xl">
+        <form method="POST" action="/login" class="card w-96 bg-base-200 shadow-xl">
             @csrf
 
             <div class="card-body h-85 justify-between">
@@ -16,11 +16,12 @@
                     Login
                 </h1>
 
-
                 <label class="form-control w-full">
                     <span class="label-text mb-1">Email</span>
                     <input
                         type="email"
+                        name="email"
+                        value="{{ old('email') }}"
                         placeholder="Example@Email.com"
                         class="input input-bordered w-full"
                     >
@@ -30,6 +31,7 @@
                     <span class="label-text mb-1">Password</span>
                     <input
                         type="text"
+                        name="password"
                         placeholder="ExamplePassword"
                         class="input input-bordered w-full"
                     >
@@ -38,7 +40,6 @@
                 <button class="btn btn-primary">
                     Entrar
                 </button>
-
 
             </div>
         </form>
